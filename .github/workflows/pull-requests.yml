@@ -32,7 +32,9 @@ jobs:
         uses: eskatos/gradle-command-action@v1
         with:
           arguments: compileJava
-      - name: Run build with Gradle Wrapper
-        run: ./gradlew build
+      - name: Build with JDK ${{ matrix.java }}
+        uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: build
 
   
